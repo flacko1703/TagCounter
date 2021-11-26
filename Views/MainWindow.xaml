@@ -1,0 +1,57 @@
+﻿<Window x:Class="HtmlTagCounter.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:HtmlTagCounter.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
+        xmlns:local="clr-namespace:HtmlTagCounter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="ShowProgressConverter" />
+        <local:ValueToBrushConverter x:Key="BrushConverter" />
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" VerticalAlignment="Center" Height="30" Background="CadetBlue">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="6*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding SelectFileCommand}" Content="Open File" Visibility="{Binding RunButtonVisible, Converter={StaticResource ShowProgressConverter}}"></Button>
+                <Button Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding CancelParseCommand}" Content="Cancel" Visibility="{Binding CancelButtonVisible, Converter={StaticResource ShowProgressConverter}}"></Button>
+                
+            </Grid>
+        </StackPanel>
+        <TextBlock Grid.Row="1" Text="{Binding FilePath, UpdateSourceTrigger=PropertyChanged}"/>
+        <DataGrid Grid.Row="1" ColumnWidth="*" ItemsSource="{Binding ReceivedDatas}" IsReadOnly="True">
+            <DataGrid.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding UrlAddress}" />
+                        <TextBlock Name = "Tag" Text="{Binding TagCount}"  Background="{Binding ElementName=Tag,
+                     Converter={StaticResource BrushConverter}}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </DataGrid.ItemTemplate>
+        </DataGrid>
+        <StackPanel Grid.Row="3">
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,20,0" Visibility="{Binding ShowProgress, Converter={StaticResource ShowProgressConverter}}">
+                <TextBlock.Text>    
+                    <MultiBinding StringFormat="{}Progress: {0} of {1}">
+                        <Binding Path="CurrentUrlLine" UpdateSourceTrigger="PropertyChanged" />
+                        <Binding Path="ReceivedDatas.Count" UpdateSourceTrigger="PropertyChanged"/>
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

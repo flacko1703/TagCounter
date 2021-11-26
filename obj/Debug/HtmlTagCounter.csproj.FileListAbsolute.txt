@@ -1,0 +1,17 @@
+D:\DEV\HTML Tag Counter\HtmlTagCounter\bin\Debug\HtmlTagCounter.exe.config
+D:\DEV\HTML Tag Counter\HtmlTagCounter\bin\Debug\HtmlTagCounter.exe
+D:\DEV\HTML Tag Counter\HtmlTagCounter\bin\Debug\HtmlTagCounter.pdb
+D:\DEV\HTML Tag Counter\HtmlTagCounter\obj\Debug\HtmlTagCounter.csproj.AssemblyReference.cache
+D:\DEV\HTML Tag Counter\HtmlTagCounter\obj\Debug\HtmlTagCounter.csproj.SuggestedBindingRedirects.cache
+D:\DEV\HTML Tag Counter\HtmlTagCounter\obj\Debug\Views\MainWindow.g.cs
+D:\DEV\HTML Tag Counter\HtmlTagCounter\obj\Debug\App.g.cs
+D:\DEV\HTML Tag Counter\HtmlTagCounter\obj\Debug\HtmlTagCounter_MarkupCompile.cache
+D:\DEV\HTML Tag Counter\HtmlTagCounter\obj\Debug\HtmlTagCounter_MarkupCompile.lref
+D:\DEV\HTML Tag Counter\HtmlTagCounter\obj\Debug\Views\MainWindow.baml
+D:\DEV\HTML Tag Counter\HtmlTagCounter\obj\Debug\HtmlTagCounter.g.resources
+D:\DEV\HTML Tag Counter\HtmlTagCounter\obj\Debug\HtmlTagCounter.Properties.Resources.resources
+D:\DEV\HTML Tag Counter\HtmlTagCounter\obj\Debug\HtmlTagCounter.csproj.GenerateResource.cache
+D:\DEV\HTML Tag Counter\HtmlTagCounter\obj\Debug\HtmlTagCounter.csproj.CoreCompileInputs.cache
+D:\DEV\HTML Tag Counter\HtmlTagCounter\obj\Debug\HtmlTagCounter.exe
+D:\DEV\HTML Tag Counter\HtmlTagCounter\obj\Debug\HtmlTagCounter.pdb
+D:\DEV\HTML Tag Counter\HtmlTagCounter\obj\Debug\GeneratedInternalTypeHelper.g.cs
